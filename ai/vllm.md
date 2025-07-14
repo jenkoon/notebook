@@ -4,11 +4,12 @@ https://github.com/vllm-project/vllm/tree/main/vllm/model_executor/models
  - PagedAttention
  借鉴了操作系统中的虚拟内存分页机制，将 LLM 推理过程中生成的 Key-Value（KV）缓存分成固定大小的“块”（类似内存页），从而动态管理显存分配，避免传统方法中因连续内存分配导致的显存碎片化问题。
    https://blog.vllm.ai/2023/06/20/vllm.html
- - 张量并行 tensor_parallel_size 使用张量并行来运行模型，提高模型的处理吞吐量，分布式服务。
+ - 张量并行tensor_parallel_size 使用张量并行来运行模型，提高模型的处理吞吐量，分布式服务。
    需要num_attention_heads整除 https://huggingface.co/Qwen/Qwen3-8B/blob/main/config.json#L17
  - 前缀缓存（Prefix Caching） enable_prefix_caching=True 默认开启,（如共享相同提示词的多个生成任务）. 在聊天场景或多轮对话中，可减少 30%-70% 的计算量。
  - data_parallel_size 通过复制模型到多个设备，并行处理不同输入数据，加速训练或推理。
- - 连续批处理（Continuous Batching）
+ - pipeline_parallel_size 流水线并行阶段数,将模型层（layers）拆分切分到多少个GPU上) 
+ - Continuous Batching 连续批处理（Continuous Batching）
    一种高效批处理技术，旨在动态合并多个请求的执行过程，最大化 GPU 利用率，显著提升吞吐量（尤其是高并发场景）。其核心思想是打破传统静态批处理的限制，允许随时加入新请求，并灵活管理不同请求的生命周期。
 
 | **特性**               | **静态批处理（Static Batching）**               | **连续批处理（Continuous Batching）**          |
@@ -56,7 +57,7 @@ https://github.com/vllm-project/vllm/tree/main/vllm/model_executor/models
 | `block_size`               | KV缓存块大小(tokens/块)              | 16/32/128(需测最优值)      |
 | `gpu_memory_utilization`   | GPU显存利用率目标(0~1)                | 0.9(接近上限但避免OOM)     |
 | `swap_space`               | 允许KV缓存交换到CPU内存的大小(GiB)    | 4(长上下文时增加)          |
-| `tensor_parallel_size`     | 张量并行  |     多注意力头的并行计算    |
+| `tensor_parallel_size`     | 张量并行 (需要模型的num_attention_heads整除)  |     多注意力头的并行计算    |
 | `pipeline_parallel_size`   | 流水线并行阶段数|  将模型层（layers）拆分切分到多少个GPU上)   |
 | `data_parallel_size`       | 数据批次 | 将数据批次（batch）拆分到多个GPU，每个GPU持有完整模型副本)   |
 
