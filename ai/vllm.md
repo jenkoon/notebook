@@ -56,7 +56,12 @@ https://github.com/vllm-project/vllm/tree/main/vllm/model_executor/models
 | `block_size`               | KV缓存块大小(tokens/块)              | 16/32/128(需测最优值)      |
 | `gpu_memory_utilization`   | GPU显存利用率目标(0~1)                | 0.9(接近上限但避免OOM)     |
 | `swap_space`               | 允许KV缓存交换到CPU内存的大小(GiB)    | 4(长上下文时增加)          |
+| `tensor_parallel_size`     | 张量并行  |     多注意力头的并行计算    |
+| `pipeline_parallel_size`   | 流水线并行阶段数|  将模型层（layers）拆分切分到多少个GPU上)   |
+| `data_parallel_size`       | 数据批次 | 将数据批次（batch）拆分到多个GPU，每个GPU持有完整模型副本)   |
 
+ 总CPU需满足pipeline_parallel_size * tensor_parallel_size * data_parallel_size = 总GPU数
+ 
 ## 4. 请求级参数(生成时指定)
 
 ```python
