@@ -73,8 +73,9 @@ output = engine.generate(
     temperature=0.8,         # 影响采样随机性
     stream=True,             # 是否流式输出
 )
+```
 
- - 观察停止原因 output.finish_reason
+## 5. 观察停止原因 output.finish_reason
 finish_reason 字段解释了生成结束的原因，常见值包括：
 "length"：达到 max_tokens 限制（可能被截断）。
 "stop"：遇到停止词（如用户定义的终止字符串）。
