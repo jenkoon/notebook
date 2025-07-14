@@ -1,6 +1,6 @@
-### Attention Is All You Need
+## Attention Is All You Need
 https://arxiv.org/pdf/1706.03762v7
-# Attention、Self-Attention 与 Multi-Head Attention 详解
+# Attention、Self-Attention 与 Multi-Head Attention
 
 ## 1. 注意力机制 (Attention)
 ### 数学表达 (Scaled Dot-Product Attention)
@@ -14,44 +14,16 @@ https://arxiv.org/pdf/1706.03762v7
  - dₖ ：Key 的维度，用于缩放（防止 softmax 梯度消失）。
 
 ## 2. 自注意力 (Self-Attention)
-特点：
+自注意力 是注意力机制的一种特殊形式，它的 Query、Key、Value 都来自同一输入序列，让序列内部的元素互相计算相关性。
 
-Query、Key、Value都来自同一输入序列
-
-能直接建模序列元素间的长距离依赖
-
-支持并行计算
-
-计算过程
-线性变换：
-
-math
-Q = XW_Q, \quad K = XW_K, \quad V = XW_V
-计算注意力：
-
-math
-\text{Self-Attention}(X) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
-<a id="3-多头注意力-multi-head-attention"></a>
+特点:
+ - 捕捉长距离依赖：无论词之间的距离多远，自注意力都能直接建模它们的关系（不像 RNN 依赖逐步传递）。
+ - 并行计算：所有位置的注意力权重可以同时计算，效率高于 RNN。
 
 ## 3. 多头注意力 (Multi-Head Attention)
-结构：
-
-math
-\text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, \dots, \text{head}_h)W_O
-其中：
-
-math
-\text{head}_i = \text{Attention}(QW_Q^i, KW_K^i, VW_V^i)
+多头注意力 是自注意力的扩展，通过 并行计算多组注意力，让模型从不同角度学习信息。
 优势：
+ - 多视角建模：不同头可以关注不同模式（如语法、语义、指代关系）。
+ - 增强表达能力：比单头注意力更灵活。
+<img width="1215" height="405" alt="image" src="https://github.com/user-attachments/assets/68a87c2e-6388-4e20-82a4-d48bb630d715" />
 
-多视角建模（不同头关注不同模式）
-
-增强模型表达能力
-
-<a id="对比总结"></a>
-
-对比总结
-机制	特点	主要用途
-Attention	动态关注输入的不同部分（Q和K/V可不同源）	Seq2Seq、图像描述生成
-Self-Attention	Q、K、V同源，捕捉序列内部关系	Transformer编码器/解码器
-Multi-Head Attn	多组自注意力并行计算，提升模型表达能力	Transformer的核心组件
