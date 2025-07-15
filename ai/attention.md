@@ -61,4 +61,8 @@ hidden_size = num_attention_heads × head_dim
 <img width="2141" height="1160" alt="image" src="https://github.com/user-attachments/assets/ed22c2a4-6d1e-4287-9d1f-4f6d6d0eef34" />
 <img width="2120" height="1410" alt="image" src="https://github.com/user-attachments/assets/22446a36-b683-4893-863c-7d51acafd673" />
 
+### 训练的真正目的
+<img width="1204" height="711" alt="image" src="https://github.com/user-attachments/assets/e1167a35-af44-477f-8cc9-769e8a790add" />
+
+
 
