@@ -24,9 +24,17 @@ https://github.com/vllm-project/vllm/tree/main/vllm/model_executor/models
 
 
  - CUDA Graphs
- - 模型量化（Quantization）
+ - 模型量化（Quantization）[llm-compressor](http://github.com/vllm-project/llm-compressor)
+   <img width="1478" height="1145" alt="image" src="https://github.com/user-attachments/assets/90602797-1371-46b6-a49a-8891a23dabf9" />
    AWQ（即激活值感知的权重量化，Activation-aware Weight Quantization)
-   GPTQ（针对类GPT大型语言模型的量化方法） 
+      即支持 GPU 也支持 CPU
+      使用AWQ量化的模型不会量化所有权重;而是量化对模型不重要的权重，以保持模型的有效性，
+   GPTQ（针对类GPT大型语言模型的量化方法）
+    (General post-training quantization)
+    
+    <img width="1347" height="792" alt="image" src="https://github.com/user-attachments/assets/31cb3a9d-4f58-4ef9-8952-a36343b6012a" />
+
+
  - 推测解码（Speculative Decoding)
 
 # Continuous Batching 参数详解
