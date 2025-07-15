@@ -27,7 +27,6 @@ https://github.com/vllm-project/vllm/tree/main/vllm/model_executor/models
  - 模型量化（Quantization）
    AWQ（即激活值感知的权重量化，Activation-aware Weight Quantization)
    GPTQ（针对类GPT大型语言模型的量化方法） 
- - 模型并行
  - 推测解码（Speculative Decoding)
 
 # Continuous Batching 参数详解
