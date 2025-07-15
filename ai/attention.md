@@ -64,5 +64,8 @@ hidden_size = num_attention_heads × head_dim
 ### 训练的真正目的
 <img width="1204" height="711" alt="image" src="https://github.com/user-attachments/assets/e1167a35-af44-477f-8cc9-769e8a790add" />
 
+### MHA、MQA、GQA
+<img width="1737" height="1254" alt="image" src="https://github.com/user-attachments/assets/133d03e9-1a3f-4865-9a46-f96c048f0771" />
+<img width="1654" height="926" alt="image" src="https://github.com/user-attachments/assets/aa3892aa-7cad-461f-a8a7-bcec7d9b06bb" />
 
 
