@@ -30,7 +30,7 @@ https://arxiv.org/pdf/1706.03762v7
 
 
 ## 数学
- - 矩阵相乘
+ - 矩阵相乘: (猫和鱼在不同维度下的关注度的和, 模型训练的目的是 反反复复在找猫和鱼在不同维度下的对应关系,并找到最佳的关系)
    <img width="1061" height="1370" alt="image" src="https://github.com/user-attachments/assets/bbcb338d-b086-4b86-ac02-d0c35ca757b7" />
 
  - linear
