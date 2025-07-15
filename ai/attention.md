@@ -21,15 +21,26 @@ https://arxiv.org/pdf/1706.03762v7
  - 并行计算：所有位置的注意力权重可以同时计算，效率高于 RNN。
 
 ## 3. 多头注意力 (Multi-Head Attention)
-多头注意力 是自注意力的扩展，通过 并行计算多组注意力，让模型从不同角度学习信息。
-优势：
- - 多视角建模：不同头可以关注不同模式（如语法、语义、指代关系）。
- - 增强表达能力：比单头注意力更灵活。
+ - 多头注意力 是自注意力的扩展，通过 并行计算多组注意力，让模型从不同角度学习信息。
+ - 在Transformer架构的LLM（Large Language Model）中，num_attention_heads（注意力头的数量）和 head_dim（每个注意力头的维度）是两个紧密相关的超参数，它们共同决定了模型隐藏层（hidden_size）的结构.
+ - 模型的 隐藏维度（hidden_size） 是 num_attention_heads 和 head_dim 的乘积：
+```
+hidden_size = num_attention_heads × head_dim
+```
+ - 优势：
+   - 多视角建模：不同头可以关注不同模式（如语法、语义、指代关系）。
+   - 增强表达能力：比单头注意力更灵活。
 <img width="1215" height="405" alt="image" src="https://github.com/user-attachments/assets/68a87c2e-6388-4e20-82a4-d48bb630d715" />
 
 
-
 ## 数学
+ - 张量
+   -  本质：张量是多维数组，可以看作一个统一的数据容器。
+   -  与数学术语的关系：
+   -  标量（0维张量）：单个数字，如 3.0。
+   -  向量（1维张量）：一列数字，如 [1, 2, 3]。
+   -  矩阵（2维张量）：二维数字表格，如 [[1, 2], [3, 4]]。
+   -  高阶张量（n维）：三维及以上数组，如图像（高度×宽度×通道）、视频（时间×高度×宽度×通道）等。
  - 矩阵相乘: (猫和鱼在不同维度下的关注度的和, 模型训练的目的是 反反复复在找猫和鱼在不同维度下的对应关系,并找到最佳的关系)
   <img width="1076" height="1343" alt="image" src="https://github.com/user-attachments/assets/f247bf2d-a33e-4aa7-a0cf-3c1bba4c8931" />
 
@@ -41,6 +52,8 @@ https://arxiv.org/pdf/1706.03762v7
    nn.LayerNorm(bias=True)
  - Softmax
    torch.softmax()
+
+
 ## QKV
 <img width="1030" height="1261" alt="image" src="https://github.com/user-attachments/assets/42a0820e-06ba-4945-8552-2429ea553603" />
 <img width="1043" height="1332" alt="image" src="https://github.com/user-attachments/assets/7e9cc480-eb81-4428-a055-b2e620bf4ab5" />
