@@ -32,6 +32,8 @@ https://arxiv.org/pdf/1706.03762v7
 ## 数学
  - linear
    在 Transformer 模型中，Linear（线性层）指的是一个全连接神经网络层（Fully Connected Layer），其数学本质是 线性变换（即矩阵乘法 + 偏置）。它的核心作用是对输入数据进行 维度变换 或 特征空间映射。
+   <img width="1079" height="1421" alt="image" src="https://github.com/user-attachments/assets/db9e5582-c471-43d7-bb5d-0e753d59e239" />
+
  - Layer Normalzation
    nn.LayerNorm(bias=True)
  - Softmax
