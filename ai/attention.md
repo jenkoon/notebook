@@ -31,7 +31,7 @@ https://arxiv.org/pdf/1706.03762v7
 
 ## 数学
  - 矩阵相乘: (猫和鱼在不同维度下的关注度的和, 模型训练的目的是 反反复复在找猫和鱼在不同维度下的对应关系,并找到最佳的关系)
-   <img width="1061" height="1370" alt="image" src="https://github.com/user-attachments/assets/bbcb338d-b086-4b86-ac02-d0c35ca757b7" />
+  <img width="1076" height="1343" alt="image" src="https://github.com/user-attachments/assets/f247bf2d-a33e-4aa7-a0cf-3c1bba4c8931" />
 
  - linear
    在 Transformer 模型中，Linear（线性层）指的是一个全连接神经网络层（Fully Connected Layer），其数学本质是 线性变换（即矩阵乘法 + 偏置）。它的核心作用是对输入数据进行 维度变换 或 特征空间映射。
