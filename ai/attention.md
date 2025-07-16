@@ -53,7 +53,6 @@ hidden_size = num_attention_heads × head_dim
  - Softmax
    torch.softmax()
 
-
 ## QKV
 <img width="1030" height="1261" alt="image" src="https://github.com/user-attachments/assets/42a0820e-06ba-4945-8552-2429ea553603" />
 <img width="1043" height="1332" alt="image" src="https://github.com/user-attachments/assets/7e9cc480-eb81-4428-a055-b2e620bf4ab5" />
@@ -67,6 +66,7 @@ hidden_size = num_attention_heads × head_dim
 ### MHA、MQA、GQA
 <img width="1737" height="1254" alt="image" src="https://github.com/user-attachments/assets/133d03e9-1a3f-4865-9a46-f96c048f0771" />
 <img width="1654" height="926" alt="image" src="https://github.com/user-attachments/assets/aa3892aa-7cad-461f-a8a7-bcec7d9b06bb" />
+
 ### Sparse Attention (Google AI)
 <img width="862" height="591" alt="image" src="https://github.com/user-attachments/assets/b3262a9f-bb03-4c63-a165-c8cfe502fe78" />
 ### Infini Attition (训练和生成都可用) (Google AI - Gemini 1.5)
@@ -74,9 +74,22 @@ hidden_size = num_attention_heads × head_dim
 #### Linear Attition (所有过去单词的每个特征值的加权和)
 <img width="2167" height="1406" alt="image" src="https://github.com/user-attachments/assets/5d746a7b-3221-42b6-bf44-e4462283cc23" />
 <img width="932" height="609" alt="image" src="https://github.com/user-attachments/assets/135fb44c-c663-45d9-b68c-3b155d69996f" />
+
 ### 支持超长上下文技术
 <img width="942" height="605" alt="image" src="https://github.com/user-attachments/assets/888f4cd1-cf07-4fdc-9cdd-f0fca0e41a97" />
 
+### 位置编码  Sinusoidal, RoPE , AliBi
+<img width="1890" height="1327" alt="image" src="https://github.com/user-attachments/assets/264743f4-ef86-47ea-a7ac-7160f921d730" />
+ - Sinusoidal 正余弦位置编码 语言翻译
+ - RoPE (Rotary Position Embedding ) (旋转位置编码) 影响Q,K 不影响V https://arxiv.org/pdf/2310.05209
+   <img width="1125" height="681" alt="image" src="https://github.com/user-attachments/assets/11cf77ed-f58e-444c-8b13-a4434804cff4" />
 
+ - YaRN(Yet Another Rotary Notebook) 针对性的微调
+  NTK-Aware / Dynamic-NTK (Code Llama/ Qwen 7B 使用)
+  PI (Postion Interpolation)
+  YaRN 基于 PI 和 NTK只上对于 RoPE的延展
+ - ALiBi (线性偏置项位置编码)
+   <img width="1873" height="1387" alt="image" src="https://github.com/user-attachments/assets/55b743e9-9448-402f-a5d7-4e4fb2d3ad19" />
 
+   
 
