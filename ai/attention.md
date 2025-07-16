@@ -41,7 +41,7 @@ hidden_size = num_attention_heads × head_dim
    -  向量（1维张量）：一列数字，如 [1, 2, 3]。
    -  矩阵（2维张量）：二维数字表格，如 [[1, 2], [3, 4]]。
    -  高阶张量（n维）：三维及以上数组，如图像（高度×宽度×通道）、视频（时间×高度×宽度×通道）等。
- - 矩阵相乘: (猫和鱼在不同维度下的关注度的和, 模型训练的目的是 反反复复在找猫和鱼在不同维度下的对应关系,并找到最佳的关系)
+ - 矩阵相乘: (猫和鱼在不同维度下的关注度的和, 两两文字间在不同维度下特征值的加权求和, 模型训练的目的是 反反复复在找猫和鱼在不同维度下的对应关系,并找到最佳的关系)
   <img width="1076" height="1343" alt="image" src="https://github.com/user-attachments/assets/f247bf2d-a33e-4aa7-a0cf-3c1bba4c8931" />
 
  - linear
@@ -67,5 +67,16 @@ hidden_size = num_attention_heads × head_dim
 ### MHA、MQA、GQA
 <img width="1737" height="1254" alt="image" src="https://github.com/user-attachments/assets/133d03e9-1a3f-4865-9a46-f96c048f0771" />
 <img width="1654" height="926" alt="image" src="https://github.com/user-attachments/assets/aa3892aa-7cad-461f-a8a7-bcec7d9b06bb" />
+### Sparse Attention (Google AI)
+<img width="862" height="591" alt="image" src="https://github.com/user-attachments/assets/b3262a9f-bb03-4c63-a165-c8cfe502fe78" />
+### Infini Attition (训练和生成都可用) (Google AI - Gemini 1.5)
+
+#### Linear Attition (所有过去单词的每个特征值的加权和)
+<img width="2167" height="1406" alt="image" src="https://github.com/user-attachments/assets/5d746a7b-3221-42b6-bf44-e4462283cc23" />
+<img width="932" height="609" alt="image" src="https://github.com/user-attachments/assets/135fb44c-c663-45d9-b68c-3b155d69996f" />
+### 支持超长上下文技术
+<img width="942" height="605" alt="image" src="https://github.com/user-attachments/assets/888f4cd1-cf07-4fdc-9cdd-f0fca0e41a97" />
+
+
 
 
