@@ -79,17 +79,19 @@ hidden_size = num_attention_heads × head_dim
 <img width="942" height="605" alt="image" src="https://github.com/user-attachments/assets/888f4cd1-cf07-4fdc-9cdd-f0fca0e41a97" />
 
 ### 位置编码  Sinusoidal, RoPE , AliBi
-<img width="1890" height="1327" alt="image" src="https://github.com/user-attachments/assets/264743f4-ef86-47ea-a7ac-7160f921d730" />
+   <img width="900" height="900" alt="image" src="https://github.com/user-attachments/assets/264743f4-ef86-47ea-a7ac-7160f921d730" />
+
  - Sinusoidal 正余弦位置编码 语言翻译
+   
  - RoPE (Rotary Position Embedding ) (旋转位置编码) 影响Q,K 不影响V https://arxiv.org/pdf/2310.05209
-   <img width="1125" height="681" alt="image" src="https://github.com/user-attachments/assets/11cf77ed-f58e-444c-8b13-a4434804cff4" />
+   <img width="900" height="900" alt="image" src="https://github.com/user-attachments/assets/11cf77ed-f58e-444c-8b13-a4434804cff4" />
 
  - YaRN(Yet Another Rotary Notebook) 针对性的微调
   NTK-Aware / Dynamic-NTK (Code Llama/ Qwen 7B 使用)
   PI (Postion Interpolation)
   YaRN 基于 PI 和 NTK只上对于 RoPE的延展
  - ALiBi (线性偏置项位置编码)
-   <img width="1873" height="1387" alt="image" src="https://github.com/user-attachments/assets/55b743e9-9448-402f-a5d7-4e4fb2d3ad19" />
+   <img width="900" height="900" alt="image" src="https://github.com/user-attachments/assets/55b743e9-9448-402f-a5d7-4e4fb2d3ad19" />
 
    
 
