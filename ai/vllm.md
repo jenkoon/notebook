@@ -37,7 +37,7 @@ https://github.com/vllm-project/vllm/tree/main/vllm/model_executor/models
 
  - 推测解码（Speculative Decoding)
 
-# Continuous Batching 参数详解
+# 参数详解
 
 ## 1. 核心参数 (vLLM 示例)
 
